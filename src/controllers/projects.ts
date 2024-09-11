@@ -7,7 +7,7 @@ export const getProjects = async (req: Request, res: Response) => {
     return res.status(200).json({
       data: projects,
       success: true,
-      message: "Projects fetched successfully",
+      message: process.env.DATABASE_URL,
     });
   } catch (error) {
     res.status(500).json({
