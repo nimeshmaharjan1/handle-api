@@ -7,10 +7,11 @@ export const getProjects = async (req: Request, res: Response) => {
     return res.status(200).json({
       data: projects,
       success: true,
-      message: process.env.DATABASE_URL,
+      message: "Projects retrieved successfully",
     });
   } catch (error) {
     res.status(500).json({
+      success: false,
       message: "Error while retrieving projects",
     });
   }
